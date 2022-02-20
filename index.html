@@ -8,60 +8,273 @@
   
   <title>Frontend Mentor | Fylo landing page with two column layout</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    /* global styling  */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      padding: 20px 30px;
+    }
+    .mobile-img {
+      width: 90vw;
+    }
+    .margin-bottom {
+      margin-bottom: 70px;
+    }
+
+    /* mobile header styling */
+    header {
+      display: flex;
+      justify-content: space-between;
+    }
+    header img {
+      width: 70px;
+    }
+    nav {
+      display: flex;
+      width: 200px;
+      justify-content: space-evenly;
+    }
+    header a {
+      text-decoration: none;
+      /* adjust font */
+    }
+    
+    /* mobile first section styling #all-your-files */
+    #all-your-files-cont {
+      text-align: center;
+    }
+    #all-your-files-cont img {
+      margin-bottom: 20px;
+    }
+    #all-your-files-cont h2 {
+      margin-bottom: 20px;
+    }
+    #all-your-files-cont p {
+      margin-bottom: 20px;
+    }
+    #all-your-files-cont input {
+      margin-bottom: 10px;
+      width: 315px;
+      padding: 10px 0 10px 15px;
+      /* lighten the font */
+      /* darkent the border */
+    }
+    #all-your-files-cont button {
+      width: 315px;
+      height: 40px;
+      /* add back ground color */
+      /* add font color */
+    }
+
+    /* mobile second section styling #stay-product-cont */
+    #stay-product-cont {
+      background-image: url(images/bg-curve-mobile.svg);
+      background-repeat: no-repeat;
+      margin: auto -30px;
+      padding-bottom: 70px;
+      background-color: hsl(228, 45%, 44%);
+        /* find a way to get background color */
+    }
+    #stay-product-cont #main-img {
+      padding-top: 70px;
+      margin: auto 30px 50px;
+    } 
+    #stay-product-cont h3 {
+      text-align: center;
+    }
+    #stay-product-cont #stay-productive-text {
+      margin: 20px 30px;
+    }
+    #green-link {
+      text-align: center;
+    }
+    #green-link a {
+      color: hsl(170, 45%, 43%);
+      text-decoration: none;
+      /* figure out the underline */
+    }
+    #green-link img {
+      width: 20px;
+      /* figure out the underlline */
+      /* figure out how to get them aligned correctly */
+    }
+    /* styling the review box */
+    #review {
+      margin: 20px 30px;
+      padding: 20px;
+      background-color: white;
+    }
+    /* styling user-profile */
+    #user-profile {
+      display: flex;
+      margin-top: 20px;
+    }
+    #user-profile img {
+      width: 40px;
+      border-radius: 100%;
+      margin-right: 10px;
+    }
+    #user-profile h5 {
+      align-self: center;
+    }
+    #user-profile span {
+      color: yellow;
+      /* change font  */
+      /* make color lighter black */
+    }
+
+    /* styling light-purple-cont */
+    #light-purple-cont {
+      background-color: hsl(238, 22%, 44%);
+      text-align: center;
+      margin: auto -30px;
+      padding: 50px 30px 70px;
+    }
+    #light-purple-cont h3 {
+      margin-bottom: 20px;
+      /* change text color */
+    }
+    #light-purple-cont p {
+      margin-bottom: 20px;
+      /* change text color */
+    }
+    #light-purple-cont input {
+      margin-bottom: 10px;
+      width: 315px;
+      padding: 10px 0 10px 15px;
+      /* lighten the font */
+      /* darkent the border */
+    }
+    #light-purple-cont button {
+      width: 315px;
+      height: 40px;
+      /* add back ground color */
+      /* add font color */
+    }
+
+    /* mobile styling for dark-blue-cont */
+    #dark-blue-cont {
+      background-color: hsl(243, 87%, 12%);
+      margin: auto -30px;
+      padding: 50px 30px;
+      color: hsl(0, 0%, 75%);
+    }
+    #contact-info {
+      margin-bottom: 30px;
+    }
+    #bottom-logo-img {
+      margin-bottom: 20px;
+    }
+    .dark-blue-phone-email-divs {
+      display: flex;
+    }
+    .dark-blue-phone-email-divs img {
+      margin-right: 20px;
+    }
+    .list {
+      margin-bottom: 30px;
+    }
+    .list a {
+      text-decoration: none;
+      display: flex;
+      color: hsl(0, 0%, 75%);
+    }
   </style>
 </head>
 <body>
+  <header class="margin-bottom">
+    <img id="logo-img" class="destkop-logo" src="images/logo.svg" alt="fylo logo">
+    <nav>
+      <a href="#">Features</a>
+      <a href="#">Team</a>
+      <a href="#">Sign In</a>
+    </nav>
+  </header>
 
-  Features
-  Team
-  Sign In
+  <section id="all-your-files-cont" class="margin-bottom">
+    <img class="mobile-img" src="images/illustration-1.svg" alt="people putting files in a folder">
+    <div>
+      <h2>All your files in one secure location, accessible anywhere.</h2>
+      <p>Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
+      <input type="email" placeholder="Enter your email...">
+      <button>Get Started</button>
+    </div>
+  </section>
 
-  All your files in one secure location, accessible anywhere.
+  <section id="stay-product-cont" class="margin-bottom">
+    <img id="main-img" class="mobile-img" src="images/illustration-2.svg" alt="people holding speach bubbles">
+    <div>
+      <h3>Stay productive, wherever you are</h3>
+      <p id="stay-productive-text"> Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.<br><br>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
+      <div id="green-link">
+        <a href="#">See how Fylo works</a>
+        <img src="images/icon-arrow.svg" alt="arrow">
+      </div> 
+      
+      <div id="review">
+        <img id="quote" src="images/icon-quotes.svg" alt="single quotation mark">
+        <p>Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a well-oiled collaboration machine.</p>
 
-  Fylo stores your most important files in one secure location. 
-  Access them wherever you need, share and collaborate with friends, 
-  family, and co-workers.
+        <div id="user-profile">
+          <img src="images/avatar-testimonial.jpg" alt="user imgage">
+          <h5>Kyle Burton<br> <span>Founder & CEO, Huddle</span></h5> 
+        </div>
+      </div>
+    </div>
+  </section>
 
-  Get Started
+  <section id="light-purple-cont">
+    <div>
+      <h3>Get early access today</h3>
+      <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
+    </div>
+    <div id="laast-form">
+      <input type="email" placeholder="email@example.com">
+      <button>Get Started For Free</button>
+    </div>
+  </section>
+  
+  <section id="dark-blue-cont">
+    <div id="contact-info">
+      <img id="bottom-logo-img" class="destkop-logo" src="images/logo.svg" alt="fylo logo">
+      
+      <div id="phone" class="dark-blue-phone-email-divs">
+        <img src="images/icon-phone.svg" alt="logo of a phone">
+        <p>Phone: +1-543-123-4567</p>
+      </div>
 
-  Stay productive, wherever you are
+      <div id="email" class="dark-blue-phone-email-divs">
+        <img src="images/icon-email.svg" alt="logo of an email">
+        <p>example@fylo.com</p>
+      </div>
+    </div>
 
-  Never let location be an issue when accessing your files. Fylo has you 
-  covered for all of your file storage needs.
+    <div class="list">
+      <ul>
+        <a href="#">About Us</a>
+        <a href="#">Jobs</a>
+        <a href="#">Press</a>
+        <a href="#">Blog</a>
+      </ul>
+    </div>
 
-  Securely share files and folders with friends, family and colleagues for 
-  live collaboration. No email attachments required!
+    <div class="list">
+      <ul>
+        <a href="#">Contact Us</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </ul>
+    </div>
 
-  See how Fylo works
-
-  Fylo has improved our team productivity by an order of magnitude. Since 
-  making the switch our team has become a well-oiled collaboration machine.
-
-  Kyle Burton
-  Founder & CEO, Huddle
-
-  Get early access today
-
-  It only takes a minute to sign up and our free starter tier is extremely generous. 
-  If you have any questions, our support team would be happy to help you.
-
-  Get Started For Free
-
-  Phone: +1-543-123-4567
-  example@fylo.com
-
-  About Us
-  Jobs
-  Press
-  Blog
-
-  Contact Us
-  Terms
-  Privacy
+    <div id="socials"></div>
+  </section>
 
   <footer>
     <p class="attribution">

@@ -9,8 +9,9 @@
   <title>Frontend Mentor | Fylo landing page with two column layout</title>
 
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    /* fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Raleway:wght@400;700&display=swap');
 
     /* global styling  */
     * {
@@ -19,13 +20,32 @@
       box-sizing: border-box;
     }
     body {
-      padding: 20px 30px;
+      padding: 20px 30px 0;
+      font-family: 'Open Sans';
+      font-weight: 400;
     }
     .mobile-img {
       width: 90vw;
     }
     .margin-bottom {
       margin-bottom: 70px;
+    }
+    h2, h3, h5, button, nav {
+      font-family: 'Raleway';
+    }
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    button {
+      background-color: hsl(224, 93%, 58%);
+      color: white;
+      border: none;
+      border-radius: 3px;
+    }
+    ::placeholder {
+      font-family: 'Open Sans';
+      color: hsl(0, 0%, 75%);
     }
 
     /* mobile header styling */
@@ -38,15 +58,15 @@
     }
     nav {
       display: flex;
-      width: 200px;
-      justify-content: space-evenly;
+      width: 150px;
+      justify-content: space-between;
     }
     header a {
       text-decoration: none;
-      /* adjust font */
+      font-size: 12px;
     }
     
-    /* mobile first section styling #all-your-files */
+    /* mobile styling for #all-your-files section */
     #all-your-files-cont {
       text-align: center;
     }
@@ -63,24 +83,27 @@
       margin-bottom: 10px;
       width: 315px;
       padding: 10px 0 10px 15px;
-      /* lighten the font */
-      /* darkent the border */
+      border: 1px solid;
     }
     #all-your-files-cont button {
       width: 315px;
       height: 40px;
-      /* add back ground color */
-      /* add font color */
+    }
+
+    /* curved top for #stay-product-cont */
+    #mobile-curve {
+      margin-left: -30px;
+      margin-bottom: -20px;
+    }
+    #desktop-curve {
+      display: none;
     }
 
     /* mobile second section styling #stay-product-cont */
     #stay-product-cont {
-      background-image: url(images/bg-curve-mobile.svg);
-      background-repeat: no-repeat;
       margin: auto -30px;
       padding-bottom: 70px;
-      background-color: hsl(228, 45%, 44%);
-        /* find a way to get background color */
+      background-color: hsl(240, 75%, 98%);
     }
     #stay-product-cont #main-img {
       padding-top: 70px;
@@ -98,20 +121,19 @@
     #green-link a {
       color: hsl(170, 45%, 43%);
       text-decoration: none;
-      /* figure out the underline */
+      border-bottom: 1px solid hsl(170, 45%, 43%);
     }
     #green-link img {
       width: 20px;
-      /* figure out the underlline */
-      /* figure out how to get them aligned correctly */
+      margin-bottom: -5px;
     }
-    /* styling the review box */
+    /* mobile styling the #review */
     #review {
       margin: 20px 30px;
       padding: 20px;
       background-color: white;
     }
-    /* styling user-profile */
+    /* mobile styling #user-profile */
     #user-profile {
       display: flex;
       margin-top: 20px;
@@ -125,12 +147,11 @@
       align-self: center;
     }
     #user-profile span {
-      color: yellow;
-      /* change font  */
-      /* make color lighter black */
+      font-size: 8px;
+      font-weight: 100;
     }
 
-    /* styling light-purple-cont */
+    /* mobile styling #light-purple-cont */
     #light-purple-cont {
       background-color: hsl(238, 22%, 44%);
       text-align: center;
@@ -139,37 +160,38 @@
     }
     #light-purple-cont h3 {
       margin-bottom: 20px;
-      /* change text color */
+      color: hsl(240, 75%, 98%);
+      font-weight: 400;
     }
     #light-purple-cont p {
       margin-bottom: 20px;
-      /* change text color */
+      color: hsl(240, 75%, 98%);
+
     }
     #light-purple-cont input {
       margin-bottom: 10px;
       width: 315px;
       padding: 10px 0 10px 15px;
-      /* lighten the font */
-      /* darkent the border */
     }
     #light-purple-cont button {
       width: 315px;
       height: 40px;
-      /* add back ground color */
-      /* add font color */
     }
 
     /* mobile styling for dark-blue-cont */
     #dark-blue-cont {
       background-color: hsl(243, 87%, 12%);
       margin: auto -30px;
-      padding: 50px 30px;
+      padding: 50px 30px 0;
       color: hsl(0, 0%, 75%);
     }
     #contact-info {
       margin-bottom: 30px;
     }
     #bottom-logo-img {
+      margin-bottom: 20px;
+    }
+    #contact-info #phone {
       margin-bottom: 20px;
     }
     .dark-blue-phone-email-divs {
@@ -185,6 +207,156 @@
       text-decoration: none;
       display: flex;
       color: hsl(0, 0%, 75%);
+      line-height: 40px;
+    }
+    #socials {
+      display: flex;
+      justify-content: space-between;
+      width: 120px;
+      margin: 50px 28% 0;
+    }
+    .social {
+      border: 1px solid hsl(0, 0%, 75%);
+      border-radius: 30px;
+      padding: 5px;
+      width: 30px;
+    }
+
+    @media only screen and (min-width: 1440px) {
+      /* desktop global styling*/
+      body {
+        padding: 30px auto;
+      }
+      header img, #bottom-logo-img {
+        width: 130px;
+      }
+
+      /* desktop heading styling */
+      header {
+        margin: auto 300px;
+      }
+      nav {
+         width: 200px;
+       }
+
+      /* shrinking the main images in #all-your-files-cont and #stay-product-cont */
+      .mobile-img {
+        width: 45%;
+      }
+      /* flipping the row for #all-your-files-cont and #stay-product-cont */
+      .desktop-view {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+
+      /* desktop styling #all-your-files-cont */
+      #all-your-files-cont {
+        margin: auto 300px;
+      }
+      #all-your-files-cont div {
+        text-align: left;
+        margin-top: 100px;
+      }
+      #all-your-files-cont h2 {
+        margin-right: 200px;
+        line-height: 50px;
+        font-size: 32px;
+        font-weight: 700;
+      }
+      #all-your-files-cont p {
+        margin-right: 254px;
+      }
+      #all-your-files-cont input {
+        width: 300px;
+        margin-right: 10px;
+      }
+      #all-your-files-cont button {
+        width: 161px;
+      }
+
+      /* desktop styling #stay-product-cont */
+      #mobile-curve {
+        display: none;
+      }
+      #desktop-curve {
+        display: block;
+        margin-bottom: -50px;
+      }
+      #stay-product-cont {
+        padding: 50px 300px;
+      }
+      #stay-product-cont #text {
+        margin-top: 50px;
+      }
+      #stay-product-cont h3 {
+        text-align: left;
+        margin-left: 30px;
+        font-size: 32px;
+      }
+      #stay-product-cont #stay-productive-text {
+        margin-right: 158px;
+      }
+      #green-link {
+      text-align: left;
+      margin-left: 30px;
+      }
+      #review {
+        width: 340px;
+        height: 200px;
+      }
+
+      /* desktop styling #light-purple-cont */
+      #light-purple-cont {
+        display: flex;
+        justify-content: space-between;
+        padding: 50px 300px;
+      } 
+      #light-purple-cont div {
+        width: 40%;
+        text-align: left;
+      }
+      #light-purple-cont div h3 {
+        font-size: 25px;
+        font-weight: 700;
+      }
+      #light-purple-cont div p {
+        width: 430px;
+      }
+      #light-purple-cont form {
+        width: 40%;
+      }
+      #light-purple-cont input {
+        width: 500px;
+      }
+      #light-purple-cont button {
+        width: 200px;
+        margin-right: 300px;
+      }
+
+      /* desktop styling #dark-blue-cont */
+      #dark-blue-cont {
+        padding: 50px 180px;
+        display: flex;
+        justify-content: space-around;
+      }
+      .list {
+        margin-top: 50px;
+      }
+      #socials {
+        margin: 50px 0 0;
+        height: 30px;
+      }
+    }
+
+    /* active classes  */
+    button:hover {
+      background-color: hsl(224, 91%, 70%);
+    }
+    #socials img:hover {
+      background-color: hsl(224, 91%, 70%);
+    }
+    a:hover {
+      color: hsl(224, 91%, 70%);
     }
   </style>
 </head>
@@ -198,24 +370,30 @@
     </nav>
   </header>
 
-  <section id="all-your-files-cont" class="margin-bottom">
+  <section id="all-your-files-cont" class="margin-bottom desktop-view">
     <img class="mobile-img" src="images/illustration-1.svg" alt="people putting files in a folder">
     <div>
       <h2>All your files in one secure location, accessible anywhere.</h2>
       <p>Fylo stores your most important files in one secure location. Access them wherever you need, share and collaborate with friends, family, and co-workers.</p>
-      <input type="email" placeholder="Enter your email...">
-      <button>Get Started</button>
+      <form action="submit">
+        <input type="email" placeholder="Enter your email...">
+        <button>Get Started</button>
+      </form>
     </div>
   </section>
 
-  <section id="stay-product-cont" class="margin-bottom">
+  <div id="curved">
+    <img id="mobile-curve" src="images/bg-curve-mobile.svg" alt="">
+    <img id="desktop-curve" src="images/bg-curve-desktop.svg" alt="">
+  </div>
+
+  <section id="stay-product-cont" class="margin-bottom desktop-view">
     <img id="main-img" class="mobile-img" src="images/illustration-2.svg" alt="people holding speach bubbles">
-    <div>
+    <div id="text">
       <h3>Stay productive, wherever you are</h3>
       <p id="stay-productive-text"> Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.<br><br>Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments required!</p>
       <div id="green-link">
-        <a href="#">See how Fylo works</a>
-        <img src="images/icon-arrow.svg" alt="arrow">
+        <a href="#">See how Fylo works <img src="images/icon-arrow.svg" alt="arrow"></a>
       </div> 
       
       <div id="review">
@@ -235,15 +413,15 @@
       <h3>Get early access today</h3>
       <p>It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our support team would be happy to help you.</p>
     </div>
-    <div id="laast-form">
+    <form action="submit" id="laast-form">
       <input type="email" placeholder="email@example.com">
       <button>Get Started For Free</button>
-    </div>
+    </form>
   </section>
   
-  <section id="dark-blue-cont">
+  <footer id="dark-blue-cont">
     <div id="contact-info">
-      <img id="bottom-logo-img" class="destkop-logo" src="images/logo.svg" alt="fylo logo">
+      <img id="bottom-logo-img" class="destkop-logo" src="images/logo-white.svg" alt="fylo logo">
       
       <div id="phone" class="dark-blue-phone-email-divs">
         <img src="images/icon-phone.svg" alt="logo of a phone">
@@ -273,14 +451,12 @@
       </ul>
     </div>
 
-    <div id="socials"></div>
-  </section>
-
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
+    <div id="socials">
+      <img class="social" src="images/facebook-24.png" alt="facebook logo">
+      <img class="social" src="images/twitter-24.png" alt="twitter logo">
+      <img class="social" src="images/instagram-24.png" alt="instagram logo">
+    </div>
   </footer>
+
 </body>
 </html>
